@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 45,
+  "height": 47,
   "spacing": 0,
   "modules-left": [
     "wlr/taskbar",
@@ -9,9 +9,13 @@
   ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
-  	"custom/appmenuicon",
+    "custom/appmenuicon",
+    "custom/space",
     "custom/browser",
-    "network",
+    "custom/spotify",
+    "custom/vscode",
+    "custom/pamac",
+    "custom/space",
     "bluetooth",
     "pulseaudio",
     "custom/temperature",
@@ -56,13 +60,31 @@
     }
   },
   "custom/appmenuicon": {
-    "format": "   ",
-    "on-click": "sleep 0.2; rofi -show drun  -width 30 -show-icons"
+    "format": "󰀻",
+    "on-click": "sleep 0.2; rofi -show drun -show-icons -theme ~/.config/rofi/fullscreen-grid.rasi"
+  },
+  "custom/space": {
+    "format": " "
   },
     "custom/browser": {
-        "format": "   ",
-        "on-click": "google-chrome",
+        "format": "",
+        "on-click": "google-chrome-stable",
         "tooltip": false
+    },
+    "custom/spotify": {
+	"format": "󰓇",
+	"on-click": "spotify-launcher",
+	"tooltip": false
+    },
+    "custom/vscode": {
+	    "format": "",
+	    "on-click": "code",
+	    "tooltip": false
+    },
+    "custom/pamac": {
+	    "format": "",
+	    "on-click": "pamac-manager",
+	    "tooltip": false
     },
   "custom/power": {
     "format": "  ",
@@ -94,15 +116,6 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-  "network": {
-    "format-wifi": " 󰤨  {essid} ",
-    "format-ethernet": "   cable ",
-    "tooltip-format": "<span color='#FF1493'> 󰅧  </span> {bandwidthUpBytes}  <span color='#00BFFF'> 󰅢  </span> {bandwidthDownBytes}",
-    "format-linked": " 󱘖  {ifname} (No IP) ",
-    "format-disconnected": "  Disconnected ",
-    "interval": 1,
-    "on-click": "kcmshell6 kcm_networkmanagement"
-  },
   "pulseaudio": {
     "format": "{icon}   {volume}% ",
     "format-muted": " 󰖁  0% ",
@@ -124,7 +137,7 @@
   },
   "custom/temperature": {
     "exec": "sensors | awk '/Tctl:/ {print int($2)}'",
-    "format": " {}°C ",
+    "format": "  {}°C ",
     "interval": 5,
   },
   "memory": {

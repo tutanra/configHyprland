@@ -1,5 +1,5 @@
 //@theme "/usr/share/rofi/themes/solarized_alternate.rasi"
-@theme "~/.config/rofi/windows11-list-dark.rasi"
+@theme "~/.config/rofi/windows11-grid-dark.rasi"
 
 configuration {
 	display-drun: "Aplicaciones";
@@ -11,6 +11,6 @@ configuration {
 }
 
 window {
-	width: 850px;
+	width: 1024px;
 	height: 700px;
 }

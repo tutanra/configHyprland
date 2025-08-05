@@ -1,0 +1,24 @@
+/* ---- Configuration ---- */
+configuration {
+    modi:                       "drun,filebrowser,window,run";
+    show-icons:                 true;
+    icon-theme:                 "Tela-circle-dracula";
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         " ";
+    display-window:              " ";
+	drun-display-format:        "{name}";
+    hover-select:               false;
+    scroll-method:              1;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+    
+}
+
+/* ---- Load colors ---- */
+@theme "./windows11-list-dark.rasi"
+window {
+  width: 600px;
+  height: 700px;
+}
