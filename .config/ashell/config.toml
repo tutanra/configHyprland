@@ -4,35 +4,40 @@ app_launcher_cmd = "walker"
 
 [appearance]
 font_name = "JetBrainsMono Nerd Font"
-opacity = 0.7
-backdrop = 0.3
-primary_color = "#7aa2f7"
-success_color = "#9ece6a"
-text_color = "#a9b1d6"
-
+opacity = 0.8
+backdrop = 0.5
+primary_color = "#7eceff"
+success_color = "#eceff4"
+text_color = "#eceff4"
+scale = 1.5 
 workspace_colors = [ "#7aa2f7", "#9ece6a" ]
+style="Islands"
 
 [appearance.danger_color]
 base = "#f7768e"
 weak = "#e0af68"
 
 [appearance.background_color]
-base = "#1a1b26"
-weak = "#24273a"
-strong = "#414868"
+base = "#2e3440"
+weak = "#4c566a"
+strong = "#8e51ac"
 
 [appearance.secondary_color]
-base = "#0c0d14"
+base = "#3b4252"
 
 [modules]
-left = [ ["appLauncher", "Browse", "Spotify", "Vscode", "Pacmac"], [ "Tray" ] ]
+left = [ ["appLauncher", "Browse", "Gemini", "Spotify", "Vscode", "Anytype", "Pacmac"], [ "Tray" ] ]
 center = [ [ "Workspaces" ], [ "MediaPlayer" ] ]
-right = [ "SystemInfo", [ "Clock", "Privacy", "Settings", "CustomNotifications"  ] ]
+right = [ "SystemInfo", [ "Clock", "Privacy", "Settings" ], "CustomNotifications" ] 
 
 [workspaces]
 visibility_mode = "All"
 max_workspaces = 6
 enable_workspace_filling = true
+
+[updates]
+check_cmd = "checkupdates; paru -Qua"
+update_cmd = 'kitty -e bash -c "paru; echo Done - Press enter to exit; read" &'
 
 [clock]
 format = "%H:%M  %d-%m-%Y"
@@ -59,7 +64,7 @@ indicators = [ "DownloadSpeed", "UploadSpeed", "Temperature", "Cpu", "Memory" ]
 [[CustomModule]]
 name = "CustomNotifications"
 icon = ""
-command = "swaync-client -t -sw"
+command = "swaync-client -t"
 listen_cmd = "swaync-client -swb"
 icons.'dnd.*' = ""
 alert = ".*notification"
@@ -70,6 +75,11 @@ icon = ""
 command = "google-chrome-stable"
 
 [[CustomModule]]
+name = "Gemini"
+icon = ""
+command = "google-chrome-stable --app='https://gemini.google.com'"
+
+[[CustomModule]]
 name = "Spotify"
 icon = "󰓇"
 command = "spotify-launcher"
@@ -78,6 +88,11 @@ command = "spotify-launcher"
 name = "Vscode"
 icon = ""
 command = "code"
+
+[[CustomModule]]
+name = "Anytype"
+icon = "󰛜"
+command = "anytype"
 
 [[CustomModule]]
 name = "Pacmac"
